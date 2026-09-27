@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6475388827359270579}
   - component: {fileID: 4581414957698261840}
   - component: {fileID: 4807589712067679860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3261586478092813654}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c0a49086e619028459968e91e17c6db3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
