@@ -14,14 +14,12 @@ public class WaypointFollower : MonoBehaviour
 
         Vector3 targetPos = waypoints[currentWaypointIndex].transform.position;
 
-        // Move toward current waypoint (framerate-independent)
         transform.position = Vector3.MoveTowards(
             transform.position,
             targetPos,
             speed * Time.deltaTime
         );
 
-        // If close enough, switch to next waypoint
         if (Vector3.Distance(transform.position, targetPos) < 0.1f)
         {
             currentWaypointIndex++;
@@ -32,7 +30,6 @@ public class WaypointFollower : MonoBehaviour
         }
     }
 
-    // Draws yellow spheres + lines between waypoints in Scene view when selected
     private void OnDrawGizmosSelected()
     {
         if (waypoints == null || waypoints.Length < 2) return;

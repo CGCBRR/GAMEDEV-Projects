@@ -20,12 +20,11 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true; // Prevent physics from tipping the player over
+        rb.freezeRotation = true;
     }
 
     private void Update()
     {
-        // --- Read input ---
         float h = 0f;
         float v = 0f;
 
@@ -34,15 +33,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))  v = -1f;
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))    v =  1f;
 
-        moveInput = new Vector3(h, 0f, v).normalized; // normalized so diagonals aren't faster
+        moveInput = new Vector3(h, 0f, v).normalized;
 
-        // --- Ground check (sphere cast at the groundCheck transform) ---
         if (groundCheck != null)
         {
             isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
         }
 
-        // --- Jump input ---
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             jumpQueued = true;
@@ -51,11 +48,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // --- Horizontal movement (preserve Y velocity so gravity/jump work) ---
         Vector3 targetVelocity = moveInput * moveSpeed;
         rb.linearVelocity = new Vector3(targetVelocity.x, rb.linearVelocity.y, targetVelocity.z);
 
-        // --- Jump ---
         if (jumpQueued)
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
@@ -63,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Visualize the ground-check sphere in the Scene view (for debugging)
     private void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
