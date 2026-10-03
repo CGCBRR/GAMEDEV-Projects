@@ -12,6 +12,8 @@ public class Checkpoint : MonoBehaviour
     public float spawnHeight = 1f;
     [Tooltip("If true, stepping on the checkpoint also refills health.")]
     public bool healOnPickup = false;
+    [Tooltip("Optional: object to activate when stepped on (e.g. the next laser phase, kept inactive until then).")]
+    public GameObject activateOnTouch;
 
     void Awake()
     {
@@ -53,6 +55,11 @@ public class Checkpoint : MonoBehaviour
         hp.SetSpawn(transform.position + Vector3.up * spawnHeight);
         hp.GrantShield();
         if (healOnPickup) hp.Heal(hp.maxHealth);
+        if (activateOnTouch != null)
+        {
+            activateOnTouch.SetActive(true);
+            activateOnTouch.SendMessage("Activate", SendMessageOptions.DontRequireReceiver);
+        }
         Debug.Log("Checkpoint reached - new spawn set, shield granted.");
     }
 }

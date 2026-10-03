@@ -39,7 +39,6 @@ public class LaserGridController : MonoBehaviour
     Vector3[] _startPos;
     float _waveStart;
     float _waveEndTime;
-    static Material _runtimeRed;
 
     void Awake()
     {
@@ -51,13 +50,11 @@ public class LaserGridController : MonoBehaviour
         {
             if (lasers[i] == null) continue;
             _startPos[i] = lasers[i].position;
-            EnsureTriggerCollider(lasers[i]);
-            EnsureDamage(lasers[i]);
         }
 
         if (laserMaterial == null)
-            laserMaterial = GetRuntimeRed();
-        ApplyMaterial();
+            laserMaterial = LaserSetup.GetRuntimeRed();
+        LaserSetup.SetupBeams(transform, laserMaterial, triggerMargin, damagePerSecond, hitDamage);
     }
 
     void Start()
@@ -116,72 +113,6 @@ public class LaserGridController : MonoBehaviour
             }
         }
         lasers = found;
-    }
-
-    void EnsureTriggerCollider(Transform laser)
-    {
-        // Triggers on concave MeshColliders are NOT supported by Unity,
-        // and a solid beam would physically block the player, so every
-        // laser gets a Box trigger sized to its visible beam instead.
-        // NOTE: size comes straight from the mesh's LOCAL bounds - dividing
-        // world bounds by lossy scale per-axis blows up on rotated beams.
-        foreach (Collider c in laser.GetComponents<Collider>())
-            Object.Destroy(c);
-        MeshFilter mf = laser.GetComponent<MeshFilter>();
-        BoxCollider box = laser.gameObject.AddComponent<BoxCollider>();
-        box.isTrigger = true;
-        if (mf != null && mf.sharedMesh != null)
-        {
-            // thin grid bar + margin, in the beam's own space (goes through
-            // the exact same transform as the mesh, so rotation/scale match)
-            box.size = mf.sharedMesh.bounds.size * triggerMargin;
-            box.center = mf.sharedMesh.bounds.center;
-        }
-        else
-        {
-            // corridor-width grid plane fallback (corridor is ~3m wide, 3m tall)
-            box.size = new Vector3(3f, 3f, 0.2f);
-        }
-    }
-
-    void EnsureDamage(Transform laser)
-    {
-        LaserDamage dmg = laser.GetComponent<LaserDamage>();
-        if (dmg == null)
-        {
-            dmg = laser.gameObject.AddComponent<LaserDamage>();
-            dmg.damagePerSecond = damagePerSecond;
-            dmg.hitDamage = hitDamage;
-        }
-    }
-
-    void ApplyMaterial()
-    {
-        if (laserMaterial == null) return;
-        foreach (Transform laser in lasers)
-        {
-            if (laser == null) continue;
-            foreach (Renderer r in laser.GetComponentsInChildren<Renderer>())
-                r.sharedMaterial = laserMaterial;
-        }
-    }
-
-    static Material GetRuntimeRed()
-    {
-        if (_runtimeRed != null) return _runtimeRed;
-        Shader s = Shader.Find("Universal Render Pipeline/Lit");
-        if (s == null) s = Shader.Find("Standard");
-        _runtimeRed = new Material(s);
-        _runtimeRed.name = "LaserRed (Runtime)";
-        _runtimeRed.color = Color.red;
-        if (_runtimeRed.HasProperty("_BaseColor"))
-            _runtimeRed.SetColor("_BaseColor", Color.red);
-        if (_runtimeRed.HasProperty("_EmissionColor"))
-        {
-            _runtimeRed.SetColor("_EmissionColor", Color.red * 2f);
-            _runtimeRed.EnableKeyword("_EMISSION");
-        }
-        return _runtimeRed;
     }
 
 #if UNITY_EDITOR
