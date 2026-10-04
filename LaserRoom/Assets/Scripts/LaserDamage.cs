@@ -32,8 +32,7 @@ public class LaserDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
-        PlayerHealth hp = other.GetComponent<PlayerHealth>();
+        PlayerHealth hp = ResolvePlayer(other);
         if (hp == null) return;
         _shieldedTouch = false;
         if (hp.ConsumeShield())
@@ -47,14 +46,23 @@ public class LaserDamage : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if (_shieldedTouch) return;
-        if (!other.CompareTag("Player")) return;
-        PlayerHealth hp = other.GetComponent<PlayerHealth>();
+        PlayerHealth hp = ResolvePlayer(other);
         if (hp != null) hp.TakeDamage(damagePerSecond * Time.deltaTime);
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (ResolvePlayer(other) == null) return;
         _shieldedTouch = false;
+    }
+
+    static PlayerHealth ResolvePlayer(Collider other)
+    {
+        if (other == null) return null;
+        PlayerHealth hp = other.GetComponent<PlayerHealth>();
+        if (hp == null) hp = other.GetComponentInParent<PlayerHealth>();
+        if (hp == null) return null;
+        if (!other.CompareTag("Player") && !hp.CompareTag("Player")) return null;
+        return hp;
     }
 }

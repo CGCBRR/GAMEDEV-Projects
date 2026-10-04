@@ -22,8 +22,16 @@ public class Checkpoint : MonoBehaviour
 
     void EnsureTrigger()
     {
-        // Keep any existing solid collider (walkable pad) and add a
-        // slightly larger trigger zone above it for step detection.
+        // Manual-collider workflow: preserve the user's BoxCollider trigger.
+        // Keep any existing solid collider (walkable pad) and only add a
+        // trigger zone if none exists.
+        BoxCollider manualBox = GetComponent<BoxCollider>();
+        if (manualBox != null)
+        {
+            manualBox.isTrigger = true;
+            EnsureMinTriggerHeight(manualBox);
+            return;
+        }
         foreach (Collider c in GetComponents<Collider>())
             if (c.isTrigger) return;
 
@@ -49,9 +57,23 @@ public class Checkpoint : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
+        TryGrant(other, true);
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        // Fallback for missed Enter (thin trigger graze, fast move,
+        // or player starting inside the zone). Grant is idempotent.
+        TryGrant(other, false);
+    }
+
+    bool TryGrant(Collider other, bool log)
+    {
+        if (other == null) return false;
         PlayerHealth hp = other.GetComponent<PlayerHealth>();
-        if (hp == null) return;
+        if (hp == null) hp = other.GetComponentInParent<PlayerHealth>();
+        if (hp == null) return false;
+        if (!other.CompareTag("Player") && !hp.CompareTag("Player")) return false;
         hp.SetSpawn(transform.position + Vector3.up * spawnHeight);
         hp.GrantShield();
         if (healOnPickup) hp.Heal(hp.maxHealth);
@@ -60,6 +82,27 @@ public class Checkpoint : MonoBehaviour
             activateOnTouch.SetActive(true);
             activateOnTouch.SendMessage("Activate", SendMessageOptions.DontRequireReceiver);
         }
-        Debug.Log("Checkpoint reached - new spawn set, shield granted.");
+        if (log)
+            Debug.Log("Checkpoint reached - new spawn set, shield granted.");
+        return true;
+    }
+
+    /// <summary>Manual triggers copied from the thin pad are too flat for the capsule to overlap. Grow upward to a 2m zone.</summary>
+    void EnsureMinTriggerHeight(BoxCollider box)
+    {
+        float scaleY = Mathf.Abs(transform.lossyScale.y);
+        if (scaleY < 0.0001f) scaleY = 1f;
+        float worldHeight = box.size.y * scaleY;
+        const float minHeight = 1.5f;
+        if (worldHeight >= minHeight) return;
+        float oldSizeY = box.size.y;
+        float newSizeY = 2f / scaleY;
+        Vector3 size = box.size;
+        size.y = newSizeY;
+        box.size = size;
+        Vector3 center = box.center;
+        center.y += (newSizeY - oldSizeY) * 0.5f; // grow upward, keep bottom
+        box.center = center;
+        Debug.LogWarning($"{gameObject.name} trigger was too flat ({worldHeight:F2}m) for the player capsule - expanded to 2m tall. Your XZ size was kept.", this);
     }
 }

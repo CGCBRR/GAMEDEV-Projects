@@ -1,22 +1,22 @@
 using UnityEngine;
 
 /// <summary>
-/// Phase 2 laser wall (attach to the "Phase 2 Lasers" parent).
-/// Each laser GROUP (4 beams) moves as one unit toward the player:
-/// Group 4 first, then Group 5, then Group 6, staggered like Phase 1.
-/// Keep this object INACTIVE until Checkpoint 1 activates it.
+/// Phase 3 laser wall (attach to the "Phase 3 Lasers" parent).
+/// Each laser GROUP moves as one unit toward the player, staggered
+/// like Phase 1/2: Element 0 first, then 1, then 2 (array order).
+/// Keep startActive false so Checkpoint 2 activates it via Activate().
 /// </summary>
-public class Phase2Controller : MonoBehaviour
+public class Phase3Controller : MonoBehaviour
 {
     [Header("Groups (3 only — array order = sweep order)")]
-    [Tooltip("Drag Laser Group 4, Laser Group 5, Laser Group 6 here in order. Element 0 moves first, then 1, then 2. Leave empty to auto-find by name. Only 3 are supported.")]
+    [Tooltip("Drag Laser Group 7, Laser Group 8, Laser Group 9 here in order. Element 0 moves first, then 1, then 2. Leave empty to auto-find by name. Only 3 are supported.")]
     public Transform[] groups = new Transform[3];
 
     const int MaxGroups = 3;
 
     [Header("Sweep toward the player")]
     public Vector3 moveDirection = Vector3.forward;
-    public float speed = 2f;
+    public float speed = 4f;
     [Tooltip("How far each group travels from its start position.")]
     public float travelDistance = 20f;
     [Tooltip("Seconds between group starts.")]
@@ -28,7 +28,7 @@ public class Phase2Controller : MonoBehaviour
     public float loopDelay = 4f;
 
     [Header("Activation")]
-    [Tooltip("If false, the groups sit still (but visible) until Activate() is called, e.g. by Checkpoint 1.")]
+    [Tooltip("If false, the groups sit still (but visible) until Activate() is called, e.g. by Checkpoint 2.")]
     public bool startActive = false;
 
     [Header("Beams")]
@@ -46,7 +46,7 @@ public class Phase2Controller : MonoBehaviour
     float _waveEndTime;
     bool _activated;
 
-    static readonly string[] GroupOrder = { "Laser Group 4", "Laser Group 5", "Laser Group 6", "Laser Group 2", "Laser Group 3" };
+    static readonly string[] GroupOrder = { "Laser Group 7", "Laser Group 8", "Laser Group 9" };
 
     void Awake()
     {
@@ -74,7 +74,7 @@ public class Phase2Controller : MonoBehaviour
         _waveEndTime = float.MaxValue;
     }
 
-    /// <summary>Arms the sweep (called by Checkpoint 1). Groups stay still until then.</summary>
+    /// <summary>Arms the sweep (called by Checkpoint 2). Groups stay still until then.</summary>
     public void Activate()
     {
         if (_activated) return;
@@ -114,7 +114,7 @@ public class Phase2Controller : MonoBehaviour
 
     void AutoFindGroups()
     {
-        // explicit 4 -> 5 -> 6 order first (tolerates the old 2/3 numbering as fallback)
+        // explicit 7 -> 8 -> 9 order first
         System.Collections.Generic.List<Transform> ordered = new System.Collections.Generic.List<Transform>();
         foreach (string n in GroupOrder)
         {
@@ -141,7 +141,7 @@ public class Phase2Controller : MonoBehaviour
     {
         if (groups == null) return;
         if (groups.Length > MaxGroups)
-            Debug.LogWarning($"Phase 2 supports only {MaxGroups} groups — extra entries ignored. Array order is sweep order (0 first).", this);
+            Debug.LogWarning($"Phase 3 supports only {MaxGroups} groups — extra entries ignored. Array order is sweep order (0 first).", this);
         System.Collections.Generic.List<Transform> valid = new System.Collections.Generic.List<Transform>();
         foreach (Transform t in groups)
         {

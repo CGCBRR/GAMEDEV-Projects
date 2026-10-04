@@ -7,9 +7,11 @@ using UnityEngine;
 /// </summary>
 public class LaserGridController : MonoBehaviour
 {
-    [Header("Lasers (sweep order: 1 first)")]
-    [Tooltip("Leave empty to auto-find children named 'Laser 1', 'Laser 2', 'Laser 3'.")]
-    public Transform[] lasers;
+    [Header("Lasers (3 only - array order = sweep order)")]
+    [Tooltip("Drag Laser 1, Laser 2, Laser 3 here in order. Element 0 moves first, then 1, then 2. Leave empty to auto-find by name. Only 3 are supported.")]
+    public Transform[] lasers = new Transform[3];
+
+    const int MaxLasers = 3;
 
     [Header("Sweep toward the player")]
     [Tooltip("World-space direction the lasers travel. +Z runs down the corridor toward the player entrance.")]
@@ -42,8 +44,10 @@ public class LaserGridController : MonoBehaviour
 
     void Awake()
     {
+        NormalizeLasers();
         if (lasers == null || lasers.Length == 0)
             AutoFindLasers();
+        NormalizeLasers();
 
         _startPos = new Vector3[lasers.Length];
         for (int i = 0; i < lasers.Length; i++)
@@ -93,37 +97,60 @@ public class LaserGridController : MonoBehaviour
 
     void AutoFindLasers()
     {
-        Transform[] found = new Transform[3];
-        int count = 0;
-        for (int i = 1; i <= 3; i++)
+        System.Collections.Generic.List<Transform> ordered = new System.Collections.Generic.List<Transform>();
+        for (int i = 1; i <= MaxLasers; i++)
         {
             Transform t = transform.Find("Laser " + i);
             if (t == null) t = transform.Find("Laser" + i);
             if (t == null) t = transform.Find("Laser (" + i + ")");
-            if (t != null) found[count++] = t;
+            if (t != null && !ordered.Contains(t)) ordered.Add(t);
         }
-        if (count == 0)
+        if (ordered.Count == 0)
         {
             // fallback: first 3 children in hierarchy order
-            count = 0;
             foreach (Transform child in transform)
             {
-                if (count >= 3) break;
-                found[count++] = child;
+                if (ordered.Count >= MaxLasers) break;
+                if (!ordered.Contains(child)) ordered.Add(child);
             }
         }
-        lasers = found;
+        lasers = ordered.ToArray();
+    }
+
+    /// <summary>Enforces 3-only, drag-drop order. Nulls/duplicates removed, extras trimmed. Array index = sweep order.</summary>
+    void NormalizeLasers()
+    {
+        if (lasers == null) return;
+        if (lasers.Length > MaxLasers)
+            Debug.LogWarning($"Phase 1 supports only {MaxLasers} lasers — extra entries ignored. Array order is sweep order (0 first).", this);
+        System.Collections.Generic.List<Transform> valid = new System.Collections.Generic.List<Transform>();
+        foreach (Transform t in lasers)
+        {
+            if (t == null || valid.Contains(t)) continue;
+            valid.Add(t);
+            if (valid.Count >= MaxLasers) break;
+        }
+        lasers = valid.ToArray();
     }
 
 #if UNITY_EDITOR
+    void OnValidate()
+    {
+        if (lasers != null && lasers.Length > MaxLasers)
+            System.Array.Resize(ref lasers, MaxLasers);
+    }
+
     void OnDrawGizmosSelected()
     {
+        if (lasers == null) return;
         Gizmos.color = Color.red;
         Vector3 dir = moveDirection.normalized;
         foreach (Transform laser in lasers)
         {
             if (laser == null) continue;
-            Vector3 from = Application.isPlaying && _startPos != null ? _startPos[System.Array.IndexOf(lasers, laser)] : laser.position;
+            int idx = System.Array.IndexOf(lasers, laser);
+            Vector3 from = Application.isPlaying && _startPos != null && idx >= 0 && idx < _startPos.Length
+                ? _startPos[idx] : laser.position;
             Gizmos.DrawLine(from, from + dir * travelDistance);
         }
     }
