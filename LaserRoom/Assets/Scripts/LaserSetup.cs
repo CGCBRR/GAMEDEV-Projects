@@ -1,15 +1,9 @@
 using UnityEngine;
 
-/// <summary>
-/// Shared setup for laser-trap phases (used by LaserGridController and Phase2Controller):
-/// red material and per-beam LaserDamage. BoxCollider triggers are manual
-/// (set in the editor) and preserved — this script no longer rebuilds them.
-/// </summary>
 public static class LaserSetup
 {
     static Material _runtimeRed;
 
-    /// <summary>Every beam under root (recursive) gets damage + red material. Manual BoxCollider triggers are left untouched.</summary>
     public static void SetupBeams(Transform root, Material laserMaterial, float triggerMargin, float dps, float hit)
     {
         if (root == null) return;
@@ -18,7 +12,7 @@ public static class LaserSetup
         foreach (Transform beam in root.GetComponentsInChildren<Transform>(true))
         {
             if (beam == root) continue;
-            if (beam.childCount > 0) continue; // groups move as units; only leaf beams get triggers
+            if (beam.childCount > 0) continue;
             EnsureBeamTrigger(beam, triggerMargin);
             EnsureBeamDamage(beam, dps, hit);
             foreach (Renderer r in beam.GetComponentsInChildren<Renderer>())
@@ -28,11 +22,6 @@ public static class LaserSetup
 
     public static void EnsureBeamTrigger(Transform laser, float margin)
     {
-        // Manual-collider workflow: preserve the user's BoxCollider setup.
-        // Only remove blocking MeshColliders (concave triggers unsupported,
-        // solid beams would physically block the player) and force
-        // remaining colliders to be triggers. Creates a BoxCollider only
-        // if the beam has none (e.g. a newly added laser was missed).
         BoxCollider existingBox = laser.GetComponent<BoxCollider>();
         foreach (MeshCollider mc in laser.GetComponents<MeshCollider>())
             Object.Destroy(mc);
@@ -43,7 +32,7 @@ public static class LaserSetup
         }
         foreach (Collider c in laser.GetComponents<Collider>())
         {
-            if (c is MeshCollider) continue; // pending destroy above
+            if (c is MeshCollider) continue;
             c.isTrigger = true;
             return;
         }
@@ -52,8 +41,6 @@ public static class LaserSetup
         box.isTrigger = true;
         if (mf != null && mf.sharedMesh != null)
         {
-            // mesh-local bounds go through the exact same transform as the
-            // visible mesh, so rotation and (parent) scale always match
             box.size = mf.sharedMesh.bounds.size * margin;
             box.center = mf.sharedMesh.bounds.center;
         }

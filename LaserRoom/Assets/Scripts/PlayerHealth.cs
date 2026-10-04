@@ -1,10 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Simple player health (attach to PlayerArmature).
-/// Taking lethal damage respawns the player at its start spot
-/// with full HP and brief invulnerability.
-/// </summary>
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
@@ -63,7 +58,6 @@ public class PlayerHealth : MonoBehaviour
         hasShield = true;
     }
 
-    /// <summary>Breaks the shield if active. Returns true when a shield was consumed.</summary>
     public bool ConsumeShield()
     {
         if (!hasShield) return false;

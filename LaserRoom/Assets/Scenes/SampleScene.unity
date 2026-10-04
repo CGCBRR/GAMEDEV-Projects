@@ -2961,27 +2961,6 @@ MonoBehaviour:
   numberGap: 12
   shieldColor: {r: 0.3, g: 0.85, b: 1, a: 1}
   shieldSize: {x: 26, y: 26}
---- !u!114 &2300000001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425968963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f60718293a4b5c6d7e8f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameTimer
-  duration: 40
-  timerFontSize: 40
-  dangerBelow: 10
-  timeoutTitle: TIME'S UP!
-  timeoutSubtitle: Timer Run Out
-  popupSize: {x: 520, y: 340}
-  titleFontSize: 48
-  bodyFontSize: 24
-  buttonFontSize: 28
 --- !u!4 &425968965
 Transform:
   m_ObjectHideFlags: 0
@@ -3677,7 +3656,7 @@ MonoBehaviour:
   laserMaterial: {fileID: 2100000, guid: a1d79c1ddfe939a4898f7794b4b4a989, type: 2}
   triggerMargin: 1.25
   damagePerSecond: 30
-  hitDamage: 10
+  hitDamage: 30
 --- !u!4 &529093176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
@@ -4496,7 +4475,7 @@ MonoBehaviour:
   laserMaterial: {fileID: 2100000, guid: a1d79c1ddfe939a4898f7794b4b4a989, type: 2}
   triggerMargin: 1.25
   damagePerSecond: 30
-  hitDamage: 10
+  hitDamage: 30
 --- !u!43 &678696257
 Mesh:
   m_ObjectHideFlags: 0
@@ -6828,6 +6807,7 @@ MonoBehaviour:
   healOnPickup: 0
   grantShield: 1
   activateOnTouch: {fileID: 1798014223}
+  startsTimer: 0
 --- !u!65 &946693975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9207,6 +9187,7 @@ MonoBehaviour:
   healOnPickup: 1
   grantShield: 1
   activateOnTouch: {fileID: 661271857}
+  startsTimer: 0
 --- !u!64 &1390808939
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10723,7 +10704,7 @@ MonoBehaviour:
   laserMaterial: {fileID: 2100000, guid: a1d79c1ddfe939a4898f7794b4b4a989, type: 2}
   triggerMargin: 1.25
   damagePerSecond: 30
-  hitDamage: 10
+  hitDamage: 30
 --- !u!1001 &1806591426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13332,6 +13313,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaserGroupSpin
   spinSpeed: 120
+--- !u!114 &2300000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425968963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f60718293a4b5c6d7e8f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameTimer
+  duration: 40
+  timerFontSize: 40
+  dangerBelow: 10
+  timeoutTitle: TIME'S UP!
+  timeoutSubtitle: Timer Run Out
+  popupSize: {x: 520, y: 340}
+  titleFontSize: 48
+  bodyFontSize: 24
+  buttonFontSize: 28
 --- !u!1 &69700298620387296
 GameObject:
   m_ObjectHideFlags: 0

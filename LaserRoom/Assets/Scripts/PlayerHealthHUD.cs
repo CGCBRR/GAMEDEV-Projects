@@ -1,11 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// On-screen player health bar (attach to any GameObject, e.g. a "PlayerHUD" root).
-/// Builds its own Screen-Space-Overlay canvas at runtime, so no manual UI setup
-/// is needed. Fill + color follow PlayerHealth (green -> yellow -> red).
-/// </summary>
 public class PlayerHealthHUD : MonoBehaviour
 {
     [Header("Bar layout")]
@@ -48,7 +43,6 @@ public class PlayerHealthHUD : MonoBehaviour
         float frac = _health.maxHealth > 0f
             ? Mathf.Clamp01(_health.currentHealth / _health.maxHealth)
             : 0f;
-        // solid red bar that visibly shrinks as health drops
         _fill.fillAmount = frac;
         _fill.color = barColor;
         if (_number != null)
@@ -62,7 +56,6 @@ public class PlayerHealthHUD : MonoBehaviour
 
     void BuildUI()
     {
-        // Canvas
         GameObject canvasGo = new GameObject("HealthCanvas");
         canvasGo.transform.SetParent(transform, false);
         Canvas canvas = canvasGo.AddComponent<Canvas>();
@@ -73,7 +66,6 @@ public class PlayerHealthHUD : MonoBehaviour
         scaler.referenceResolution = new Vector2(1920f, 1080f);
         canvasGo.AddComponent<GraphicRaycaster>();
 
-        // Bar background (top-left)
         GameObject bgGo = new GameObject("HealthBarBG");
         bgGo.transform.SetParent(canvasGo.transform, false);
         Image bg = bgGo.AddComponent<Image>();
@@ -85,7 +77,6 @@ public class PlayerHealthHUD : MonoBehaviour
         bgRect.sizeDelta = barSize;
         bgRect.anchoredPosition = new Vector2(screenPadding.x, -screenPadding.y);
 
-        // Fill (horizontal, drains left-to-right... fills from left)
         GameObject fillGo = new GameObject("HealthFill");
         fillGo.transform.SetParent(bgGo.transform, false);
         _fill = fillGo.AddComponent<Image>();
@@ -105,7 +96,6 @@ public class PlayerHealthHUD : MonoBehaviour
 
         if (!showNumber) return;
 
-        // Number beside the bar (right of it, vertically centered)
         GameObject numGo = new GameObject("HealthNumber");
         numGo.transform.SetParent(canvasGo.transform, false);
         _number = numGo.AddComponent<Text>();
@@ -124,7 +114,6 @@ public class PlayerHealthHUD : MonoBehaviour
             screenPadding.x + barSize.x + numberGap,
             -screenPadding.y - barSize.y * 0.5f);
 
-        // Shield diamond beside the number (hidden unless buff active)
         GameObject shieldGo = new GameObject("ShieldIcon");
         shieldGo.transform.SetParent(canvasGo.transform, false);
         _shieldIcon = shieldGo.AddComponent<Image>();

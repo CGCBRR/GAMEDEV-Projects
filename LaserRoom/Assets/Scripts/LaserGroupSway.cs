@@ -1,13 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Side-to-side sway for the beams inside a laser group.
-/// Attach to Laser Group 4 / 5 / 6 (NOT to individual beams).
-/// Drag the group's beams into Lasers in the order they should stagger:
-/// Element 0 sways first, then 1, 2, 3. Leave empty to auto-use all
-/// direct children. Beams stay parented to the group, so the sway rides
-/// on top of the group's sweep from LaserController.
-/// </summary>
 public class LaserGroupSway : MonoBehaviour
 {
     [Header("Lasers (array order = stagger order)")]
@@ -67,7 +59,6 @@ public class LaserGroupSway : MonoBehaviour
         lasers = ordered.ToArray();
     }
 
-    /// <summary>Enforces max count, drag-drop order. Nulls/duplicates removed, extras trimmed. Array index = stagger order.</summary>
     void NormalizeLasers()
     {
         if (lasers == null) return;

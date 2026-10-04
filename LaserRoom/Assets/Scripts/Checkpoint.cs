@@ -1,10 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Put on Checkpoint 1. When the player steps on it, it becomes the new
-/// respawn point and grants the shield buff (blocks exactly one laser hit).
-/// Stepping on it again refreshes the shield.
-/// </summary>
 [RequireComponent(typeof(Collider))]
 public class Checkpoint : MonoBehaviour
 {
@@ -16,7 +11,7 @@ public class Checkpoint : MonoBehaviour
     public bool grantShield = true;
     [Tooltip("Optional: object to activate when stepped on (e.g. the next laser phase, kept inactive until then).")]
     public GameObject activateOnTouch;
-    [Tooltip("If true, stepping on this checkpoint starts (or restarts) the 60s game timer. Use on the Start Checkpoint.")]
+    [Tooltip("If true, stepping on this checkpoint starts (or restarts) the game timer. Use on the Start Checkpoint.")]
     public bool startsTimer = false;
 
     void Awake()
@@ -26,9 +21,6 @@ public class Checkpoint : MonoBehaviour
 
     void EnsureTrigger()
     {
-        // Manual-collider workflow: preserve the user's BoxCollider trigger.
-        // Keep any existing solid collider (walkable pad) and only add a
-        // trigger zone if none exists.
         BoxCollider manualBox = GetComponent<BoxCollider>();
         if (manualBox != null)
         {
@@ -66,8 +58,6 @@ public class Checkpoint : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        // Fallback for missed Enter (thin trigger graze, fast move,
-        // or player starting inside the zone). Grant is idempotent.
         TryGrant(other, false);
     }
 
@@ -92,7 +82,6 @@ public class Checkpoint : MonoBehaviour
         return true;
     }
 
-    /// <summary>Manual triggers copied from the thin pad are too flat for the capsule to overlap. Grow upward to a 2m zone.</summary>
     void EnsureMinTriggerHeight(BoxCollider box)
     {
         float scaleY = Mathf.Abs(transform.lossyScale.y);
@@ -106,7 +95,7 @@ public class Checkpoint : MonoBehaviour
         size.y = newSizeY;
         box.size = size;
         Vector3 center = box.center;
-        center.y += (newSizeY - oldSizeY) * 0.5f; // grow upward, keep bottom
+        center.y += (newSizeY - oldSizeY) * 0.5f;
         box.center = center;
         Debug.LogWarning($"{gameObject.name} trigger was too flat ({worldHeight:F2}m) for the player capsule - expanded to 2m tall. Your XZ size was kept.", this);
     }

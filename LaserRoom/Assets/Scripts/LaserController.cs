@@ -1,12 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Unified laser sweeper for ALL phases (attach to each "Phase N Lasers" parent).
-/// Drag up to 3 movers (single beams like Phase 1, or groups like Phase 2/3)
-/// in sweep order: Element 0 moves first, then 1, then 2.
-/// Phases gated by checkpoints use startActive = false + Activate()
-/// (Checkpoint calls it via SendMessage). Phase 1 uses startActive = true.
-/// </summary>
 public class LaserController : MonoBehaviour
 {
     [Header("Movers (3 only — array order = sweep order)")]
@@ -74,7 +67,6 @@ public class LaserController : MonoBehaviour
         _waveEndTime = float.MaxValue;
     }
 
-    /// <summary>Arms the sweep (called by Checkpoints via SendMessage). Movers stay still until then.</summary>
     public void Activate()
     {
         if (_activated) return;
@@ -114,8 +106,6 @@ public class LaserController : MonoBehaviour
 
     void AutoFindMovers()
     {
-        // Generic: direct children containing beam meshes, in hierarchy order.
-        // Works for single beams (Phase 1) and groups (Phase 2/3).
         System.Collections.Generic.List<Transform> ordered = new System.Collections.Generic.List<Transform>();
         foreach (Transform child in transform)
         {
@@ -126,7 +116,6 @@ public class LaserController : MonoBehaviour
         movers = ordered.ToArray();
     }
 
-    /// <summary>Enforces 3-only, drag-drop order. Nulls/duplicates removed, extras trimmed. Array index = sweep order.</summary>
     void NormalizeMovers()
     {
         if (movers == null) return;
@@ -154,11 +143,12 @@ public class LaserController : MonoBehaviour
         if (movers == null) return;
         Gizmos.color = Color.red;
         Vector3 dir = moveDirection.normalized;
-        for (int i = 0; i < movers.Length; i++)
+        foreach (Transform laser in movers)
         {
-            if (movers[i] == null) continue;
-            Vector3 from = Application.isPlaying && _startPos != null && i < _startPos.Length
-                ? _startPos[i] : movers[i].position;
+            if (laser == null) continue;
+            int idx = System.Array.IndexOf(movers, laser);
+            Vector3 from = Application.isPlaying && _startPos != null && idx >= 0 && idx < _startPos.Length
+                ? _startPos[idx] : laser.position;
             Gizmos.DrawLine(from, from + dir * travelDistance);
         }
     }

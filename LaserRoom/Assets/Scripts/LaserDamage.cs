@@ -1,11 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Put on each laser. Hurts the player (tag "Player") only on real
-/// physical touch with the beam trigger: instant hit on enter plus
-/// damage-over-time while the player stays inside the beam.
-/// Works with the player's CharacterController (no Rigidbody needed).
-/// </summary>
 [RequireComponent(typeof(Collider))]
 public class LaserDamage : MonoBehaviour
 {
@@ -14,9 +8,6 @@ public class LaserDamage : MonoBehaviour
     [Tooltip("Damage per second while the player stays inside the beam.")]
     public float damagePerSecond = 30f;
 
-    // While true, this touch was already paid for with the shield:
-    // the whole touch (enter + stay) deals zero damage, then the
-    // next touch hurts normally.
     bool _shieldedTouch;
 
     void Reset()

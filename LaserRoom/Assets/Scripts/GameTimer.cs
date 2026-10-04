@@ -1,13 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// 60-second countdown shown on the player's screen. Started by the Start
-/// Checkpoint (Checkpoint.startsTimer), stopped early by the Win Wall
-/// (WinWall calls OnWin). If the clock hits zero first, the game freezes
-/// and a TIME'S UP popup with Play Again appears.
-/// Attach to the PlayerHUD root. Drawn with IMGUI so no Canvas setup needed.
-/// </summary>
 public class GameTimer : MonoBehaviour
 {
     public static GameTimer Instance { get; private set; }
@@ -41,7 +34,6 @@ public class GameTimer : MonoBehaviour
         _timeLeft = duration;
     }
 
-    /// <summary>Starts (or restarts) the countdown. Called by the Start Checkpoint.</summary>
     public void StartTimer()
     {
         if (_won) return;
@@ -50,7 +42,6 @@ public class GameTimer : MonoBehaviour
         _timedOut = false;
     }
 
-    /// <summary>Stops the countdown because the player won. Called by WinWall.</summary>
     public void OnWin()
     {
         _won = true;
@@ -74,7 +65,7 @@ public class GameTimer : MonoBehaviour
         if (_won || _timedOut) return;
         _timedOut = true;
         _cursorWasLocked = Cursor.lockState == CursorLockMode.Locked;
-        Time.timeScale = 0f; // freezes lasers, sway, spin, player
+        Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Debug.Log("Timer ran out - game over!");
@@ -125,7 +116,7 @@ public class GameTimer : MonoBehaviour
         button.fontSize = buttonFontSize;
         if (GUILayout.Button("Play Again", button, GUILayout.Height(64f)))
         {
-            Time.timeScale = 1f; // must unfreeze BEFORE reload
+            Time.timeScale = 1f;
             if (_cursorWasLocked)
             {
                 Cursor.lockState = CursorLockMode.Locked;

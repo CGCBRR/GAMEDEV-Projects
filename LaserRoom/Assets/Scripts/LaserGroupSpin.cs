@@ -1,14 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Spins a laser group around its own local X axis (windmill motion).
-/// Attach to Laser Group 7 / 8 / 9 in Phase 3. The beams rotate rigidly
-/// around THEIR OWN CENTER (average of the children's positions), not the
-/// group's origin — otherwise beams far from the pivot would swing in a
-/// huge orbit and fly upward instead of spinning in place.
-/// The spin composes with LaserController's sweep (position vs rotation),
-/// and child trigger colliders rotate along, so damage works at any angle.
-/// </summary>
 public class LaserGroupSpin : MonoBehaviour
 {
     [Header("Spin (local X axis, around beam center)")]

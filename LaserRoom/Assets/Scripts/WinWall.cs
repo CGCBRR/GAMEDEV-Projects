@@ -1,13 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Win trigger (attach to the "Win Wall" object, which needs a
-/// BoxCollider with Is Trigger enabled). When the player touches it,
-/// the game freezes and a centered GAME COMPLETE popup appears with
-/// the clear time and a Play Again button (reloads the scene).
-/// Drawn with IMGUI so no Canvas setup is needed.
-/// </summary>
 [RequireComponent(typeof(Collider))]
 public class WinWall : MonoBehaviour
 {
@@ -39,7 +32,6 @@ public class WinWall : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        // Fallback for missed Enter (fast move / spawn-inside).
         TryWin(other);
     }
 
@@ -49,9 +41,9 @@ public class WinWall : MonoBehaviour
         if (ResolvePlayer(other) == null) return;
         _won = true;
         _winTime = Time.timeSinceLevelLoad;
-        if (GameTimer.Instance != null) GameTimer.Instance.OnWin(); // stops the countdown
+        if (GameTimer.Instance != null) GameTimer.Instance.OnWin();
         _cursorWasLocked = Cursor.lockState == CursorLockMode.Locked;
-        Time.timeScale = 0f; // freezes lasers, sway, spin, player
+        Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Debug.Log("Win Wall touched - game complete!");
@@ -61,7 +53,6 @@ public class WinWall : MonoBehaviour
     {
         if (!_won) return;
 
-        // Dim full screen behind the popup.
         GUI.color = new Color(0f, 0f, 0f, 0.6f);
         GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), Texture2D.whiteTexture);
         GUI.color = Color.white;
@@ -89,7 +80,7 @@ public class WinWall : MonoBehaviour
         button.fontSize = buttonFontSize;
         if (GUILayout.Button("Play Again", button, GUILayout.Height(64f)))
         {
-            Time.timeScale = 1f; // must unfreeze BEFORE reload
+            Time.timeScale = 1f;
             if (_cursorWasLocked)
             {
                 Cursor.lockState = CursorLockMode.Locked;
