@@ -40,7 +40,10 @@ public class WinWall : MonoBehaviour
         if (_won) return;
         if (ResolvePlayer(other) == null) return;
         _won = true;
-        _winTime = Time.timeSinceLevelLoad;
+        if (GameTimer.Instance != null && GameTimer.Instance.HasStarted)
+            _winTime = GameTimer.Instance.Elapsed;
+        else
+            _winTime = Time.timeSinceLevelLoad;
         if (GameTimer.Instance != null) GameTimer.Instance.OnWin();
         _cursorWasLocked = Cursor.lockState == CursorLockMode.Locked;
         Time.timeScale = 0f;

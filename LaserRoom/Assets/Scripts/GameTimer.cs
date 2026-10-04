@@ -23,23 +23,31 @@ public class GameTimer : MonoBehaviour
     public int buttonFontSize = 28;
 
     float _timeLeft;
+    float _elapsed;
     bool _running;
     bool _won;
     bool _timedOut;
     bool _cursorWasLocked;
 
+    public float Elapsed => _elapsed;
+    public float TimeLeft => _timeLeft;
+    public bool HasStarted { get; private set; }
+
     void Awake()
     {
         Instance = this;
         _timeLeft = duration;
+        _elapsed = 0f;
     }
 
     public void StartTimer()
     {
         if (_won) return;
         _timeLeft = duration;
+        _elapsed = 0f;
         _running = true;
         _timedOut = false;
+        HasStarted = true;
     }
 
     public void OnWin()
@@ -52,6 +60,7 @@ public class GameTimer : MonoBehaviour
     {
         if (!_running || _won) return;
         _timeLeft -= Time.deltaTime;
+        _elapsed += Time.deltaTime;
         if (_timeLeft <= 0f)
         {
             _timeLeft = 0f;
