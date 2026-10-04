@@ -16,6 +16,8 @@ public class Checkpoint : MonoBehaviour
     public bool grantShield = true;
     [Tooltip("Optional: object to activate when stepped on (e.g. the next laser phase, kept inactive until then).")]
     public GameObject activateOnTouch;
+    [Tooltip("If true, stepping on this checkpoint starts (or restarts) the 60s game timer. Use on the Start Checkpoint.")]
+    public bool startsTimer = false;
 
     void Awake()
     {
@@ -79,6 +81,7 @@ public class Checkpoint : MonoBehaviour
         hp.SetSpawn(transform.position + Vector3.up * spawnHeight);
         if (grantShield) hp.GrantShield();
         if (healOnPickup) hp.Heal(hp.maxHealth);
+        if (startsTimer && GameTimer.Instance != null) GameTimer.Instance.StartTimer();
         if (activateOnTouch != null)
         {
             activateOnTouch.SetActive(true);
