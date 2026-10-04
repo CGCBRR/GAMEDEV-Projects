@@ -12,6 +12,8 @@ public class Checkpoint : MonoBehaviour
     public float spawnHeight = 1f;
     [Tooltip("If true, stepping on the checkpoint also refills health.")]
     public bool healOnPickup = false;
+    [Tooltip("If true, stepping on the checkpoint grants the shield buff (blocks exactly one laser hit). Turn off for the Start Checkpoint.")]
+    public bool grantShield = true;
     [Tooltip("Optional: object to activate when stepped on (e.g. the next laser phase, kept inactive until then).")]
     public GameObject activateOnTouch;
 
@@ -75,7 +77,7 @@ public class Checkpoint : MonoBehaviour
         if (hp == null) return false;
         if (!other.CompareTag("Player") && !hp.CompareTag("Player")) return false;
         hp.SetSpawn(transform.position + Vector3.up * spawnHeight);
-        hp.GrantShield();
+        if (grantShield) hp.GrantShield();
         if (healOnPickup) hp.Heal(hp.maxHealth);
         if (activateOnTouch != null)
         {
@@ -83,7 +85,7 @@ public class Checkpoint : MonoBehaviour
             activateOnTouch.SendMessage("Activate", SendMessageOptions.DontRequireReceiver);
         }
         if (log)
-            Debug.Log("Checkpoint reached - new spawn set, shield granted.");
+            Debug.Log("Checkpoint reached - new spawn set" + (grantShield ? ", shield granted." : "."));
         return true;
     }
 
