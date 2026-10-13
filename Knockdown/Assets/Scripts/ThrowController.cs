@@ -72,9 +72,13 @@ public class ThrowController : MonoBehaviour
         ball.transform.localScale = Vector3.one * ballScale;
         ball.transform.position = holdPoint.position;
 
+        // Set layer so it never collides with the Player
+        int ballLayer = LayerMask.NameToLayer("Ball");
+        if (ballLayer != -1) ball.layer = ballLayer;
+
         Rigidbody rb = ball.AddComponent<Rigidbody>();
         rb.mass = ballMass;
-        rb.linearDamping = 0.05f;      // less drag → flies farther
+        rb.linearDamping = 0.05f;
         rb.angularDamping = 0.3f;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
