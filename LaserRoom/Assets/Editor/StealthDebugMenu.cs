@@ -164,9 +164,6 @@ public static class StealthDebugMenu
     [MenuItem(MenuRoot + "Teleport Player Into Scanner 1 Sweep")]
     static void TeleportScanner1() => TeleportIntoScanner(1);
 
-    [MenuItem(MenuRoot + "Teleport Player Into Scanner 2 Sweep")]
-    static void TeleportScanner2() => TeleportIntoScanner(2);
-
     /// <summary>Drops the player in the middle of a scanner's sweep band.</summary>
     static void TeleportIntoScanner(int index)
     {
