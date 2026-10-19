@@ -498,6 +498,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 1038606501}
   m_PrefabAsset: {fileID: 0}
+--- !u!134 &52501067
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1 &57751401
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +576,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 278574544}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 7.6
@@ -642,19 +659,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 450109109}
   m_PrefabAsset: {fileID: 0}
---- !u!134 &102413050
-PhysicsMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ' (Instance)'
-  serializedVersion: 2
-  m_DynamicFriction: 0.6
-  m_StaticFriction: 0.6
-  m_Bounciness: 0
-  m_FrictionCombine: 0
-  m_BounceCombine: 0
 --- !u!43 &116738760
 Mesh:
   m_ObjectHideFlags: 0
@@ -861,6 +865,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 399022807}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 9.4
@@ -935,19 +943,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 152792287}
   m_PrefabAsset: {fileID: 0}
---- !u!134 &167504798
-PhysicsMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ' (Instance)'
-  serializedVersion: 2
-  m_DynamicFriction: 0.6
-  m_StaticFriction: 0.6
-  m_Bounciness: 0
-  m_FrictionCombine: 0
-  m_BounceCombine: 0
 --- !u!43 &228545635
 Mesh:
   m_ObjectHideFlags: 0
@@ -1154,6 +1149,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.000061035156
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1564534291}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 5
@@ -1251,6 +1250,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1538219057}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 8.4
@@ -1353,6 +1356,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.000030517578
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1490568698}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 4.2
@@ -1601,6 +1608,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1876357150}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 9.1
@@ -1675,6 +1686,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 268545053}
   m_PrefabAsset: {fileID: 0}
+--- !u!134 &278574544
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &279100392
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &297467875
 Mesh:
   m_ObjectHideFlags: 0
@@ -2250,6 +2287,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1978730082}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 7.5
@@ -2502,6 +2543,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &399022807
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &401309642
 Mesh:
   m_ObjectHideFlags: 0
@@ -2680,6 +2734,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &404408583
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ' (Instance) (Instance)'
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &406310979
 Mesh:
   m_ObjectHideFlags: 0
@@ -3275,6 +3342,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.000030517578
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1572376757}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 3
@@ -3336,6 +3407,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+--- !u!134 &462781364
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &490247744
 Mesh:
   m_ObjectHideFlags: 0
@@ -3720,6 +3804,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 808840146}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 9.6
@@ -3794,13 +3882,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 502400439}
   m_PrefabAsset: {fileID: 0}
---- !u!134 &503866081
+--- !u!134 &507453722
 PhysicsMaterial:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ' (Instance)'
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &509598337
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
   serializedVersion: 2
   m_DynamicFriction: 0.6
   m_StaticFriction: 0.6
@@ -4215,7 +4316,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558241134}
-  m_Material: {fileID: 1685845996}
+  m_Material: {fileID: 1040104618}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4621,6 +4722,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 509598337}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 6
@@ -4798,7 +4903,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617194386}
-  m_Material: {fileID: 1537048044}
+  m_Material: {fileID: 848044553}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4848,6 +4953,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1595631218}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 9.5
@@ -4990,6 +5099,19 @@ MonoBehaviour:
   beamMargin: 1.25
   damagePerSecond: 30
   hitDamage: 30
+--- !u!134 &667135846
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &678696257
 Mesh:
   m_ObjectHideFlags: 0
@@ -5168,6 +5290,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &686585543
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &693695667
 Mesh:
   m_ObjectHideFlags: 0
@@ -5346,6 +5481,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &693983524
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ' (Instance) (Instance)'
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &706442613
 Mesh:
   m_ObjectHideFlags: 0
@@ -5914,6 +6062,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &808840146
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &832341186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5942,6 +6103,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1955474893}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 9.3
@@ -6243,6 +6408,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &848044553
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ' (Instance) (Instance)'
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &854251917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6271,6 +6449,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.000061035156
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1034664181}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 5.1
@@ -6701,6 +6883,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 258798355}
   m_PrefabAsset: {fileID: 0}
+--- !u!134 &935203494
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ' (Instance) (Instance)'
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &941516669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6729,6 +6924,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 970853660}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 8.3
@@ -7026,7 +7225,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946693967}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 667135846}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7363,7 +7562,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946693967}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 1013752789}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7405,6 +7604,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1508242717}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 8
@@ -7479,6 +7682,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 948982308}
   m_PrefabAsset: {fileID: 0}
+--- !u!134 &953430532
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1 &956337604
 GameObject:
   m_ObjectHideFlags: 0
@@ -7587,7 +7803,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956337604}
-  m_Material: {fileID: 102413050}
+  m_Material: {fileID: 404408583}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7614,13 +7830,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 854251917}
   m_PrefabAsset: {fileID: 0}
---- !u!134 &968459600
+--- !u!134 &970853660
 PhysicsMaterial:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ' (Instance)'
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &972976922
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &979458282
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
   serializedVersion: 2
   m_DynamicFriction: 0.6
   m_StaticFriction: 0.6
@@ -7651,6 +7893,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.000061035156
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2090350017}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 5.3
@@ -7832,6 +8078,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989141725}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!134 &1008451857
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &1011802363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7860,6 +8119,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1803170805}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 9.2
@@ -7934,6 +8197,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 1011802363}
   m_PrefabAsset: {fileID: 0}
+--- !u!134 &1013752789
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &1022085586
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &1034664181
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &1038606501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7954,6 +8256,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1205205357}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 2
@@ -8039,6 +8345,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1058654645}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 6.1
@@ -8108,6 +8418,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+--- !u!134 &1040104618
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ' (Instance) (Instance)'
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!1 &1049072838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049072839}
+  m_Layer: 0
+  m_Name: Hazards
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1049072839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049072838}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1998114246}
+  - {fileID: 1966822913}
+  - {fileID: 1660742000}
+  - {fileID: 1326536720}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1052229858
 Mesh:
   m_ObjectHideFlags: 0
@@ -8286,6 +8644,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &1058654645
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &1077616438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8314,6 +8685,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 52501067}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 8.5
@@ -8416,6 +8791,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.000061035156
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1284408496}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 5.2
@@ -8552,6 +8931,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 686585543}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 7.3
@@ -8654,6 +9037,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 972976922}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 8.6
@@ -8934,6 +9321,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1008451857}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 9
@@ -9018,6 +9409,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 1444449384}
   m_PrefabAsset: {fileID: 0}
+--- !u!134 &1205205357
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &1207410758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9046,6 +9450,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 979458282}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 6.2
@@ -9143,6 +9551,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1945292702}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 8.2
@@ -9573,6 +9985,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &1284408496
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1 &1296042871
 GameObject:
   m_ObjectHideFlags: 0
@@ -9686,6 +10111,89 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296042871}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!134 &1304312464
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!1 &1326536719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1326536720}
+  - component: {fileID: 1326536721}
+  m_Layer: 0
+  m_Name: Drone 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1326536720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326536719}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.45, z: -92.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1049072839}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1326536721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326536719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153504e83a2d7be45b758ed9068717ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatrolDroneHazard
+  patrolRange: 3
+  patrolAxis: {x: 0, y: 0, z: 1}
+  patrolSpeed: 1.6
+  endPause: 1.2
+  turnSpeed: 140
+  bobAmplitude: 0.06
+  bobSpeed: 1.7
+  visionRange: 10
+  visionAngle: 70
+  timeToAlarm: 1.8
+  flashlightRateMultiplier: 2
+  meterDecayPerSecond: 0.5
+  checkInterval: 0.1
+  alarmDamage: 20
+  alertDuration: 5
+  alarmCooldown: 3
+  chaseSpeed: 3.2
+  chaseLeash: 6
+  chaseStandoff: 1.5
+  contactDamage: 10
+  contactInterval: 0.9
+  contactRadius: 1.7
+  meter: 0
+  alarmed: 0
+  seesPlayer: 0
+  currentDetectionRate: 0
 --- !u!1001 &1369315933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9714,6 +10222,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2022338793}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 8.1
@@ -9886,7 +10398,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390808936}
-  m_Material: {fileID: 1933715605}
+  m_Material: {fileID: 1410999978}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -10206,7 +10718,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390808936}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 1304312464}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -10220,6 +10732,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3200235, y: 0.36609125, z: 1.3119601}
   m_Center: {x: 0.000000014901161, y: 0, z: 0.0000038146973}
+--- !u!134 &1410999978
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ' (Instance)'
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &1421336616
 Mesh:
   m_ObjectHideFlags: 0
@@ -10575,7 +11100,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434266389}
-  m_Material: {fileID: 968459600}
+  m_Material: {fileID: 2048043628}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -10625,6 +11150,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.000030517578
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1660828531}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 4
@@ -10695,6 +11224,19 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
 --- !u!134 &1482293605
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &1490568698
 PhysicsMaterial:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10885,6 +11427,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &1508242717
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1 &1518128955
 GameObject:
   m_ObjectHideFlags: 0
@@ -10993,7 +11548,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518128955}
-  m_Material: {fileID: 503866081}
+  m_Material: {fileID: 935203494}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -11193,19 +11748,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!134 &1537048044
-PhysicsMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ' (Instance)'
-  serializedVersion: 2
-  m_DynamicFriction: 0.6
-  m_StaticFriction: 0.6
-  m_Bounciness: 0
-  m_FrictionCombine: 0
-  m_BounceCombine: 0
 --- !u!1 &1537882127
 GameObject:
   m_ObjectHideFlags: 0
@@ -11314,7 +11856,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537882127}
-  m_Material: {fileID: 167504798}
+  m_Material: {fileID: 693983524}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -11336,6 +11878,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537882127}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!134 &1538219057
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &1547895406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11364,6 +11919,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1582771469}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 7.4
@@ -11438,6 +11997,167 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 1547895406}
   m_PrefabAsset: {fileID: 0}
+--- !u!134 &1564534291
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &1572376757
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &1577629569
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &1582771469
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &1595631218
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &1615586887
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!1 &1660741999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660742000}
+  - component: {fileID: 1660742001}
+  m_Layer: 0
+  m_Name: Drone 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1660742000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660741999}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.45, z: -69.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1049072839}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660742001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660741999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153504e83a2d7be45b758ed9068717ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatrolDroneHazard
+  patrolRange: 2.5
+  patrolAxis: {x: 0, y: 0, z: 1}
+  patrolSpeed: 1.6
+  endPause: 1.2
+  turnSpeed: 140
+  bobAmplitude: 0.06
+  bobSpeed: 1.7
+  visionRange: 10
+  visionAngle: 70
+  timeToAlarm: 1.8
+  flashlightRateMultiplier: 2
+  meterDecayPerSecond: 0.5
+  checkInterval: 0.1
+  alarmDamage: 20
+  alertDuration: 5
+  alarmCooldown: 3
+  chaseSpeed: 3.2
+  chaseLeash: 6
+  chaseStandoff: 1.5
+  contactDamage: 10
+  contactInterval: 0.9
+  contactRadius: 1.7
+  meter: 0
+  alarmed: 0
+  seesPlayer: 0
+  currentDetectionRate: 0
+--- !u!134 &1660828531
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!4 &1665627503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
@@ -11448,19 +12168,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
   m_PrefabInstance: {fileID: 590702235509431582}
   m_PrefabAsset: {fileID: 0}
---- !u!134 &1685845996
-PhysicsMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ' (Instance)'
-  serializedVersion: 2
-  m_DynamicFriction: 0.6
-  m_StaticFriction: 0.6
-  m_Bounciness: 0
-  m_FrictionCombine: 0
-  m_BounceCombine: 0
 --- !u!1001 &1740708559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11489,6 +12196,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.000030517578
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1615586887}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 4.3
@@ -11781,7 +12492,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783270949}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 1935808739}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -11883,6 +12594,19 @@ MonoBehaviour:
   beamMargin: 1.25
   damagePerSecond: 30
   hitDamage: 30
+--- !u!134 &1803170805
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &1806591426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11907,6 +12631,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.000030517578
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 953430532}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 4.1
@@ -12279,6 +13007,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &1830642239
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1 &1838349517
 GameObject:
   m_ObjectHideFlags: 0
@@ -12346,6 +13087,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 279100392}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 7.1
@@ -12848,6 +13593,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &1876357150
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &1897645881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12876,6 +13634,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1830642239}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 7.2
@@ -12978,6 +13740,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2004534196}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 7
@@ -13070,7 +13836,7 @@ PhysicsMaterial:
   m_Bounciness: 0
   m_FrictionCombine: 0
   m_BounceCombine: 0
---- !u!134 &1933715605
+--- !u!134 &1935808739
 PhysicsMaterial:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13373,6 +14139,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &1945292702
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &1946087364
 Mesh:
   m_ObjectHideFlags: 0
@@ -13551,6 +14330,19 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!134 &1955474893
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &1958531357
 Mesh:
   m_ObjectHideFlags: 0
@@ -13729,6 +14521,89 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1966822912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966822913}
+  - component: {fileID: 1966822914}
+  m_Layer: 0
+  m_Name: Drone 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1966822913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966822912}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.45, z: -31.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1049072839}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1966822914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966822912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153504e83a2d7be45b758ed9068717ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatrolDroneHazard
+  patrolRange: 4
+  patrolAxis: {x: 0, y: 0, z: 1}
+  patrolSpeed: 1.6
+  endPause: 1.2
+  turnSpeed: 140
+  bobAmplitude: 0.06
+  bobSpeed: 1.7
+  visionRange: 10
+  visionAngle: 70
+  timeToAlarm: 1.8
+  flashlightRateMultiplier: 2
+  meterDecayPerSecond: 0.5
+  checkInterval: 0.1
+  alarmDamage: 20
+  alertDuration: 5
+  alarmCooldown: 3
+  chaseSpeed: 3.2
+  chaseLeash: 6
+  chaseStandoff: 1.5
+  contactDamage: 10
+  contactInterval: 0.9
+  contactRadius: 1.7
+  meter: 0
+  alarmed: 0
+  seesPlayer: 0
+  currentDetectionRate: 0
+--- !u!134 &1978730082
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!43 &1987733135
 Mesh:
   m_ObjectHideFlags: 0
@@ -13907,6 +14782,102 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1998114245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1998114246}
+  - component: {fileID: 1998114247}
+  m_Layer: 0
+  m_Name: Drone 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1998114246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998114245}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.45, z: -12.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1049072839}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1998114247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998114245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153504e83a2d7be45b758ed9068717ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatrolDroneHazard
+  patrolRange: 4
+  patrolAxis: {x: 0, y: 0, z: 1}
+  patrolSpeed: 1.6
+  endPause: 1.2
+  turnSpeed: 140
+  bobAmplitude: 0.06
+  bobSpeed: 1.7
+  visionRange: 8
+  visionAngle: 70
+  timeToAlarm: 1.8
+  flashlightRateMultiplier: 2
+  meterDecayPerSecond: 0.5
+  checkInterval: 0.1
+  alarmDamage: 20
+  alertDuration: 5
+  alarmCooldown: 3
+  chaseSpeed: 3.2
+  chaseLeash: 6
+  chaseStandoff: 1.5
+  contactDamage: 10
+  contactInterval: 0.9
+  contactRadius: 1.7
+  meter: 0
+  alarmed: 0
+  seesPlayer: 0
+  currentDetectionRate: 0
+--- !u!134 &2004534196
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
+--- !u!134 &2022338793
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &2038227326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13935,6 +14906,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1022085586}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 6.3
@@ -14004,6 +14979,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+--- !u!134 &2048043628
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ' (Instance) (Instance)'
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1 &2087907255
 GameObject:
   m_ObjectHideFlags: 0
@@ -14049,7 +15037,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087907255}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 462781364}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -14087,7 +15075,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087907255}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 507453722}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -14400,6 +15388,19 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!134 &2090350017
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!4 &2092175352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5998427724144229423, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
@@ -14743,6 +15744,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 528655794}
     m_Modifications:
+    - target: {fileID: 1404028426725266513, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1577629569}
     - target: {fileID: 3639262238047780268, guid: 327e1cf10e481994a91ad3f7377da19c, type: 3}
       propertyPath: m_Name
       value: Laser 1
@@ -17698,3 +18703,4 @@ SceneRoots:
   - {fileID: 29130979}
   - {fileID: 750020791}
   - {fileID: 57751405}
+  - {fileID: 1049072839}
