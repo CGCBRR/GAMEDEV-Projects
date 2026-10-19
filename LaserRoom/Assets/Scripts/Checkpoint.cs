@@ -71,7 +71,11 @@ public class Checkpoint : MonoBehaviour
         hp.SetSpawn(transform.position + Vector3.up * spawnHeight);
         if (grantShield) hp.GrantShield();
         if (healOnPickup) hp.Heal(hp.maxHealth);
-        if (startsTimer && GameTimer.Instance != null) GameTimer.Instance.StartTimer();
+        if (startsTimer)
+        {
+            if (GameTimer.Instance != null) GameTimer.Instance.StartTimer();
+            else Debug.LogError($"{name}: startsTimer is enabled but no GameTimer exists in the scene.", this);
+        }
         if (activateOnTouch != null)
         {
             activateOnTouch.SetActive(true);

@@ -3,7 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class GameTimer : MonoBehaviour
 {
-    public static GameTimer Instance { get; private set; }
+    static GameTimer _instance;
+
+    public static GameTimer Instance
+    {
+        get
+        {
+            if (_instance == null) _instance = FindFirstObjectByType<GameTimer>();
+            return _instance;
+        }
+        private set { _instance = value; }
+    }
 
     [Header("Timer")]
     [Tooltip("Seconds on the clock when the Start Checkpoint is touched.")]
