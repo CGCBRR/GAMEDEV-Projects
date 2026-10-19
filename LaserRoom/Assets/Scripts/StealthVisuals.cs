@@ -44,6 +44,34 @@ public static class StealthVisuals
             material.SetColor("_EmissionColor", color * Mathf.Max(0f, intensity));
     }
 
+    /// <summary>Transparent emissive material for scanner curtains (URP Lit, alpha-blended).</summary>
+    public static Material MakeCurtain(Color color, float intensity, string name)
+    {
+        Material m = new Material(FindShader());
+        m.name = name;
+        m.SetOverrideTag("RenderType", "Transparent");
+        if (m.HasProperty("_Surface")) m.SetFloat("_Surface", 1f);      // 1 = transparent
+        if (m.HasProperty("_Blend")) m.SetFloat("_Blend", 0f);          // alpha blend
+        if (m.HasProperty("_SrcBlend")) m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+        if (m.HasProperty("_DstBlend")) m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+        if (m.HasProperty("_ZWrite")) m.SetInt("_ZWrite", 0);
+        if (m.HasProperty("_AlphaClip")) m.SetFloat("_AlphaClip", 0f);
+        m.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+        m.DisableKeyword("_ALPHATEST_ON");
+        m.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+
+        Color c = color;
+        c.a = 0.3f;
+        if (m.HasProperty("_BaseColor")) m.SetColor("_BaseColor", c);
+        m.color = c;
+        if (m.HasProperty("_EmissionColor"))
+        {
+            m.SetColor("_EmissionColor", color * Mathf.Max(0f, intensity));
+            m.EnableKeyword("_EMISSION");
+        }
+        return m;
+    }
+
     static Shader FindShader()
     {
         Shader s = Shader.Find("Universal Render Pipeline/Lit");

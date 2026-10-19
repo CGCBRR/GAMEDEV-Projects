@@ -85,4 +85,137 @@ public static class StealthDebugMenu
 
         Debug.Log($"Stealth Debug: player teleported near drone {index} (z {dest.z:0.0}).");
     }
+
+    [MenuItem(MenuRoot + "Simulate Double-Tap Sprint (start run)")]
+    static void SimulateSprintStart()
+    {
+        if (!RequirePlayMode()) return;
+
+        DoubleTapSprint sprint = Object.FindFirstObjectByType<DoubleTapSprint>();
+        if (sprint == null)
+        {
+            Debug.LogWarning("Stealth Debug: no DoubleTapSprint on the player.");
+            return;
+        }
+
+        sprint.DebugBeginSprintRun();
+        Debug.Log("Stealth Debug: scripted sprint run started (holds W, sprint latched).");
+    }
+
+    [MenuItem(MenuRoot + "Simulate Double-Tap Sprint (stop run)")]
+    static void SimulateSprintStop()
+    {
+        if (!RequirePlayMode()) return;
+
+        DoubleTapSprint sprint = Object.FindFirstObjectByType<DoubleTapSprint>();
+        if (sprint == null)
+        {
+            Debug.LogWarning("Stealth Debug: no DoubleTapSprint on the player.");
+            return;
+        }
+
+        sprint.DebugEndSprintRun();
+        Debug.Log("Stealth Debug: scripted sprint run stopped.");
+    }
+
+    [MenuItem(MenuRoot + "Simulate Crouch Toggle (C)")]
+    static void SimulateCrouchToggle()
+    {
+        if (!RequirePlayMode()) return;
+
+        PlayerCrouch crouch = Object.FindFirstObjectByType<PlayerCrouch>();
+        if (crouch == null)
+        {
+            Debug.LogWarning("Stealth Debug: no PlayerCrouch on the player.");
+            return;
+        }
+
+        crouch.DebugToggle();
+        Debug.Log($"Stealth Debug: crouch toggled -> {(crouch.crouched ? "crouched" : "standing")}.");
+    }
+
+    [MenuItem(MenuRoot + "Teleport Player Into Scanner 1 Sweep")]
+    static void TeleportScanner1() => TeleportIntoScanner(1);
+
+    [MenuItem(MenuRoot + "Teleport Player Into Scanner 2 Sweep")]
+    static void TeleportScanner2() => TeleportIntoScanner(2);
+
+    /// <summary>Drops the player in the middle of a scanner's sweep band.</summary>
+    static void TeleportIntoScanner(int index)
+    {
+        if (!RequirePlayMode()) return;
+
+        GameObject scannerGo = GameObject.Find("Scanner " + index);
+        if (scannerGo == null)
+        {
+            Debug.LogWarning($"Stealth Debug: 'Scanner {index}' not found in the scene.");
+            return;
+        }
+
+        PlayerHealth hp = Object.FindFirstObjectByType<PlayerHealth>();
+        if (hp == null)
+        {
+            Debug.LogWarning("Stealth Debug: no PlayerHealth in the scene.");
+            return;
+        }
+
+        Vector3 dest = new Vector3(0f, hp.transform.position.y, scannerGo.transform.position.z);
+        CharacterController cc = hp.GetComponent<CharacterController>();
+        if (cc != null) cc.enabled = false;
+        hp.transform.position = dest;
+        if (cc != null) cc.enabled = true;
+
+        Debug.Log($"Stealth Debug: player teleported into scanner {index} sweep (z {dest.z:0.0}).");
+    }
+
+    [MenuItem(MenuRoot + "Measure Corridor (log)")]
+    static void MeasureCorridor()
+    {
+        if (!RequirePlayMode()) return;
+
+        PlayerHealth hp = Object.FindFirstObjectByType<PlayerHealth>();
+        if (hp == null)
+        {
+            Debug.LogWarning("Stealth Debug: no PlayerHealth in the scene.");
+            return;
+        }
+
+        Vector3 p = hp.transform.position;
+        Physics.Raycast(p + Vector3.up * 2f, Vector3.down, out RaycastHit down, 12f, ~0, QueryTriggerInteraction.Ignore);
+        Physics.Raycast(new Vector3(0f, p.y + 1.2f, p.z), Vector3.right, out RaycastHit right, 12f, ~0, QueryTriggerInteraction.Ignore);
+        Physics.Raycast(new Vector3(0f, p.y + 1.2f, p.z), Vector3.left, out RaycastHit left, 12f, ~0, QueryTriggerInteraction.Ignore);
+        Camera cam = Camera.main;
+
+        float floorY = down.collider != null ? p.y + 2f - down.distance : float.NaN;
+        Debug.Log($"Stealth Debug MEASURE: player y {p.y:0.###}, z {p.z:0.###}; floorY {floorY:0.###} ('{down.collider?.name}'); " +
+                  $"right gap {right.distance:0.###} ('{right.collider?.name}'); left gap {left.distance:0.###} ('{left.collider?.name}'); " +
+                  $"camera y {(cam != null ? cam.transform.position.y : float.NaN):0.###}.");
+    }
+
+    [MenuItem(MenuRoot + "Enable Run In Background (dev)")]
+    static void EnableRunInBackground()
+    {
+        PlayerSettings.runInBackground = true;
+        Debug.Log("Stealth Debug: Player Setting 'Run In Background' enabled - play mode keeps ticking while the editor is unfocused.");
+    }
+
+    [MenuItem(MenuRoot + "Restart Round (reset timer + unfreeze)")]
+    static void RestartRound()
+    {
+        if (!RequirePlayMode()) return;
+
+        Time.timeScale = 1f;
+        GameTimer timer = Object.FindFirstObjectByType<GameTimer>();
+        if (timer != null) timer.StartTimer();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Debug.Log("Stealth Debug: round restarted (timer reset, timeScale 1).");
+    }
+
+    static bool RequirePlayMode()
+    {
+        if (Application.isPlaying) return true;
+        Debug.LogWarning("Stealth Debug: enter play mode first.");
+        return false;
+    }
 }

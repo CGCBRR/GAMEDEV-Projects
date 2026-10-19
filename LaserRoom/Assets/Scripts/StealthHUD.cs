@@ -40,13 +40,14 @@ public class StealthHUD : MonoBehaviour
     void OnGUI()
     {
         DrawStatus();
+        DrawStats();
         DrawToast();
     }
 
     void DrawStatus()
     {
         const float width = 235f;
-        const float height = 58f;
+        const float height = 78f;
         Rect area = new Rect(Screen.width - width - 12f, 12f, width, height);
         GUI.Box(area, "");
 
@@ -63,6 +64,36 @@ public class StealthHUD : MonoBehaviour
         GUILayout.Label($"Intel {HiddenObject.IntelCollected}/{HiddenObject.IntelTotal}   {keycard}", style);
         string flashlight = PlayerFlashlight.IsOn ? "<b>ON</b>" : "off";
         GUILayout.Label($"Flashlight [{flashlight}] - F", style);
+        string crouch = PlayerCrouch.IsCrouched ? "<b>ON</b>" : "off";
+        GUILayout.Label($"Crouch [{crouch}] - C", style);
+        GUILayout.EndArea();
+    }
+
+    void DrawStats()
+    {
+        StealthStats stats = StealthStats.Instance;
+        if (stats == null) return;
+
+        PlayerHealth hp = StealthPhysics.Player;
+        int alarms = hp != null ? hp.alarmCount : 0;
+        int deaths = hp != null ? hp.deathCount : 0;
+
+        const float width = 235f;
+        const float height = 58f;
+        Rect area = new Rect(12f, Screen.height - height - 12f, width, height);
+        GUI.Box(area, "");
+
+        GUIStyle style = new GUIStyle(GUI.skin.label)
+        {
+            richText = true,
+            fontSize = 14,
+            alignment = TextAnchor.MiddleCenter
+        };
+        style.normal.textColor = new Color(0.85f, 0.9f, 0.95f);
+
+        GUILayout.BeginArea(new Rect(area.x, area.y + 6f, area.width, area.height - 8f));
+        GUILayout.Label($"Steps {stats.steps}   {stats.distance:0} m", style);
+        GUILayout.Label($"Spotted {alarms}   Deaths {deaths}", style);
         GUILayout.EndArea();
     }
 

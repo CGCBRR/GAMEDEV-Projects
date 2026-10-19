@@ -9,11 +9,20 @@ public class PlayerHealth : MonoBehaviour
     [Tooltip("Shield buff: blocks exactly one laser hit, then breaks.")]
     public bool hasShield;
 
+    [Header("Run stats")]
+    [Tooltip("Times damage actually reached the player (lasers, drones, scanners).")]
+    public int hitCount;
+    [Tooltip("Times a hazard alarm was raised against the player.")]
+    public int alarmCount;
+    [Tooltip("Times the player died and respawned.")]
+    public int deathCount;
+
     public bool IsDead { get; private set; }
 
     Vector3 _spawnPos;
     Quaternion _spawnRot;
     float _invulnTimer;
+    float _lastHitStatTime;
 
     void Awake()
     {
@@ -39,6 +48,11 @@ public class PlayerHealth : MonoBehaviour
         if (_invulnTimer > 0f) return;
 
         currentHealth -= amount;
+        if (Time.time - _lastHitStatTime > 0.25f)   // continuous damage (laser wash) counts once
+        {
+            _lastHitStatTime = Time.time;
+            hitCount++;
+        }
         if (currentHealth <= 0f)
         {
             currentHealth = 0f;
@@ -65,6 +79,12 @@ public class PlayerHealth : MonoBehaviour
         return true;
     }
 
+    /// <summary>Called by detection hazards when their alarm trips (run stats).</summary>
+    public void ReportAlarm()
+    {
+        alarmCount++;
+    }
+
     public void SetSpawn(Vector3 pos)
     {
         _spawnPos = pos;
@@ -72,6 +92,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        deathCount++;
         IsDead = true;
         Debug.Log(gameObject.name + " killed by lasers - respawning.");
 

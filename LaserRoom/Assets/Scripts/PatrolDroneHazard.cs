@@ -274,6 +274,7 @@ public class PatrolDroneHazard : MonoBehaviour
 
         if (!hp.ConsumeShield())
             hp.TakeDamage(alarmDamage);
+        hp.ReportAlarm();
 
         StealthHUD.ShowToast("Spotted by a drone!");
         Debug.Log($"{name}: ALARM - player detected (flashlight {(PlayerFlashlight.IsOn ? "ON" : "off")}).", this);
