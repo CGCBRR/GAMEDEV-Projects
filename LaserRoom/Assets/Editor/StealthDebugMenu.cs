@@ -87,7 +87,18 @@ public static class StealthDebugMenu
     }
 
     [MenuItem(MenuRoot + "Simulate Double-Tap Sprint (start run)")]
-    static void SimulateSprintStart()
+    static void SimulateSprintStart() => SimulateSprint(Vector2.up, "forward");
+
+    [MenuItem(MenuRoot + "Simulate Double-Tap Sprint (left run)")]
+    static void SimulateSprintLeft() => SimulateSprint(Vector2.left, "left");
+
+    [MenuItem(MenuRoot + "Simulate Double-Tap Sprint (right run)")]
+    static void SimulateSprintRight() => SimulateSprint(Vector2.right, "right");
+
+    [MenuItem(MenuRoot + "Simulate Double-Tap Sprint (back run)")]
+    static void SimulateSprintBack() => SimulateSprint(Vector2.down, "back");
+
+    static void SimulateSprint(Vector2 dir, string label)
     {
         if (!RequirePlayMode()) return;
 
@@ -98,8 +109,8 @@ public static class StealthDebugMenu
             return;
         }
 
-        sprint.DebugBeginSprintRun();
-        Debug.Log("Stealth Debug: scripted sprint run started (holds W, sprint latched).");
+        sprint.DebugDoubleTapRun(dir);
+        Debug.Log($"Stealth Debug: scripted sprint run started ({label} double-tap, held).");
     }
 
     [MenuItem(MenuRoot + "Simulate Double-Tap Sprint (stop run)")]
