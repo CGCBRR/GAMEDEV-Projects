@@ -5,9 +5,10 @@ using UnityEngine.InputSystem;
 #endif
 
 /// <summary>
-/// Toggle crouch on C. Lowers the CharacterController and the camera rig, and slows
-/// movement while crouched. Scanner curtains sweep above crouch height, so ducking
-/// under them is the safe route through a scan.
+/// Hold crouch on C. Lowers the CharacterController and the camera rig, and slows
+/// movement while crouched. Release C to stand back up; if there is no headroom
+/// you stay crouched until it clears. Scanner curtains sweep above crouch height,
+/// so ducking under them is the safe route through a scan.
 /// </summary>
 [RequireComponent(typeof(CharacterController))]
 public class PlayerCrouch : MonoBehaviour
@@ -41,6 +42,8 @@ public class PlayerCrouch : MonoBehaviour
     Transform _camTarget;
     float _standHeight, _standCenterY, _standCamY, _standMove, _standSprint;
     float _blend;
+    bool _debugHold;
+    bool _standBlockedLogged;
 
     void Awake()
     {
@@ -67,25 +70,37 @@ public class PlayerCrouch : MonoBehaviour
         if (Time.deltaTime <= 0f) return;   // frozen rounds ignore stance input
 
 #if ENABLE_INPUT_SYSTEM
-        bool toggle = Keyboard.current != null && Keyboard.current.cKey.wasPressedThisFrame;
+        bool held = _debugHold || (Keyboard.current != null && Keyboard.current.cKey.isPressed);
 #else
-        bool toggle = Input.GetKeyDown(KeyCode.C);
+        bool held = _debugHold || Input.GetKey(KeyCode.C);
 #endif
-        if (toggle) Toggle();
+
+        if (held)
+        {
+            crouched = true;
+            _standBlockedLogged = false;
+        }
+        else if (crouched)
+        {
+            // C released: stand back up as soon as there is headroom above the head.
+            if (StandClear(out string blocker))
+            {
+                crouched = false;
+                _standBlockedLogged = false;
+            }
+            else if (!_standBlockedLogged)
+            {
+                _standBlockedLogged = true;
+                Debug.LogWarning($"PlayerCrouch: cannot stand up yet - blocked by '{blocker}'.", this);
+            }
+        }
 
         _blend = Mathf.MoveTowards(_blend, crouched ? 1f : 0f, transitionSpeed * Time.deltaTime);
         Apply(_blend);
     }
 
-    /// <summary>Switches stance; standing back up needs headroom above the crouched head.</summary>
-    public void Toggle()
-    {
-        if (!crouched) crouched = true;
-        else if (StandClear()) crouched = false;
-    }
-
-    /// <summary>Debug hook for the editor test menu.</summary>
-    public void DebugToggle() => Toggle();
+    /// <summary>Debug hook for the editor test menu: pretend the C key is held or released.</summary>
+    public void DebugSetCrouchHold(bool hold) => _debugHold = hold;
 
     void Apply(float t)
     {
@@ -108,8 +123,9 @@ public class PlayerCrouch : MonoBehaviour
         }
     }
 
-    bool StandClear()
+    bool StandClear(out string blocker)
     {
+        blocker = null;
         float radius = Mathf.Max(0.05f, _cc.radius - probeShrink);
         float crouchTop = _cc.center.y + crouchHeight * 0.5f;
         float standTop = _standCenterY + _standHeight * 0.5f;
@@ -121,7 +137,7 @@ public class PlayerCrouch : MonoBehaviour
         Collider[] hits = Physics.OverlapSphere(probe, radius, blocking, QueryTriggerInteraction.Ignore);
         if (hits.Length == 0) return true;
 
-        Debug.LogWarning($"PlayerCrouch: cannot stand up - blocked by '{hits[0].gameObject.name}'.", this);
+        blocker = hits[0].gameObject.name;
         return false;
     }
 }

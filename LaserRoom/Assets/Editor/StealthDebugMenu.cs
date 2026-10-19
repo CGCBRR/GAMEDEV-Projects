@@ -129,8 +129,8 @@ public static class StealthDebugMenu
         Debug.Log("Stealth Debug: scripted sprint run stopped.");
     }
 
-    [MenuItem(MenuRoot + "Simulate Crouch Toggle (C)")]
-    static void SimulateCrouchToggle()
+    [MenuItem(MenuRoot + "Simulate Crouch Hold (C down)")]
+    static void SimulateCrouchDown()
     {
         if (!RequirePlayMode()) return;
 
@@ -141,8 +141,24 @@ public static class StealthDebugMenu
             return;
         }
 
-        crouch.DebugToggle();
-        Debug.Log($"Stealth Debug: crouch toggled -> {(crouch.crouched ? "crouched" : "standing")}.");
+        crouch.DebugSetCrouchHold(true);
+        Debug.Log("Stealth Debug: crouch key held (C down).");
+    }
+
+    [MenuItem(MenuRoot + "Simulate Crouch Release (C up)")]
+    static void SimulateCrouchUp()
+    {
+        if (!RequirePlayMode()) return;
+
+        PlayerCrouch crouch = Object.FindFirstObjectByType<PlayerCrouch>();
+        if (crouch == null)
+        {
+            Debug.LogWarning("Stealth Debug: no PlayerCrouch on the player.");
+            return;
+        }
+
+        crouch.DebugSetCrouchHold(false);
+        Debug.Log("Stealth Debug: crouch key released (C up).");
     }
 
     [MenuItem(MenuRoot + "Teleport Player Into Scanner 1 Sweep")]
