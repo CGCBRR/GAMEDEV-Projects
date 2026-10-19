@@ -1,3 +1,3 @@
-# Gameplay: Laser Room
+# Gameplay: Ray-OE Zoning
 
-**Watch the walkthrough:** https://youtu.be/a_7drdRem8U
+**Watch the walkthrough:** https://youtu.be/h8GAa1YwIAk
