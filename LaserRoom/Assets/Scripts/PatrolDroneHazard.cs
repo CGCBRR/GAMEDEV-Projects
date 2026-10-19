@@ -353,6 +353,25 @@ public class PatrolDroneHazard : MonoBehaviour
     }
 
 #if UNITY_EDITOR
+    /// <summary>
+    /// Always-visible Scene-view marker for the drone, whose real body is built at
+    /// runtime (nothing to render in edit mode). Purely a gizmo - no gameplay effect.
+    /// </summary>
+    void OnDrawGizmos()
+    {
+        if (Application.isPlaying) return;   // the real visual is there during play
+
+        Gizmos.color = new Color(0.25f, 0.9f, 1f, 0.9f);
+        Gizmos.DrawWireSphere(transform.position, 0.25f);
+
+        Vector3 fwd = FlatDir(transform.forward);
+        if (fwd.sqrMagnitude > 0.0001f)
+        {
+            Gizmos.color = new Color(1f, 0.8f, 0.2f, 0.9f);
+            Gizmos.DrawLine(transform.position, transform.position + fwd * 0.5f);
+        }
+    }
+
     void OnValidate()
     {
         patrolRange = Mathf.Max(0.1f, patrolRange);
