@@ -29,8 +29,8 @@ public class LaserController : MonoBehaviour
     [Header("Beams")]
     [Tooltip("Red laser material. If empty, a runtime emissive-red material is created and shared.")]
     public Material laserMaterial;
-    [Tooltip("Trigger boxes match the beam mesh plus this margin (1.25 = 25% bigger).")]
-    public float triggerMargin = 1.25f;
+    [Tooltip("Beam cross-section is inflated by this factor to build the hazard capsule radius (1.25 = 25% bigger).")]
+    public float beamMargin = 1.25f;
     [Tooltip("Damage applied while a laser touches the player (per second).")]
     public float damagePerSecond = 30f;
     [Tooltip("Instant damage on first touch.")]
@@ -57,7 +57,7 @@ public class LaserController : MonoBehaviour
 
         if (laserMaterial == null)
             laserMaterial = LaserSetup.GetRuntimeRed();
-        LaserSetup.SetupBeams(transform, laserMaterial, triggerMargin, damagePerSecond, hitDamage);
+        LaserSetup.SetupBeams(transform, laserMaterial, beamMargin, damagePerSecond, hitDamage);
     }
 
     void Start()

@@ -4,7 +4,7 @@ public static class LaserSetup
 {
     static Material _runtimeRed;
 
-    public static void SetupBeams(Transform root, Material laserMaterial, float triggerMargin, float dps, float hit)
+    public static void SetupBeams(Transform root, Material laserMaterial, float beamMargin, float dps, float hit)
     {
         if (root == null) return;
         if (laserMaterial == null)
@@ -13,52 +13,31 @@ public static class LaserSetup
         {
             if (beam == root) continue;
             if (beam.childCount > 0) continue;
-            EnsureBeamTrigger(beam, triggerMargin);
-            EnsureBeamDamage(beam, dps, hit);
+            StripBeamColliders(beam);
+            EnsureBeamHazard(beam, beamMargin, dps, hit);
             foreach (Renderer r in beam.GetComponentsInChildren<Renderer>())
                 r.sharedMaterial = laserMaterial;
         }
     }
 
-    public static void EnsureBeamTrigger(Transform laser, float margin)
+    /// <summary>
+    /// Beams are visuals plus query hazards only — colliders would block the player and
+    /// would make the beam detectable by raycasts, so any authored ones are removed.
+    /// </summary>
+    public static void StripBeamColliders(Transform beam)
     {
-        BoxCollider existingBox = laser.GetComponent<BoxCollider>();
-        foreach (MeshCollider mc in laser.GetComponents<MeshCollider>())
-            Object.Destroy(mc);
-        if (existingBox != null)
-        {
-            existingBox.isTrigger = true;
-            return;
-        }
-        foreach (Collider c in laser.GetComponents<Collider>())
-        {
-            if (c is MeshCollider) continue;
-            c.isTrigger = true;
-            return;
-        }
-        MeshFilter mf = laser.GetComponent<MeshFilter>();
-        BoxCollider box = laser.gameObject.AddComponent<BoxCollider>();
-        box.isTrigger = true;
-        if (mf != null && mf.sharedMesh != null)
-        {
-            box.size = mf.sharedMesh.bounds.size * margin;
-            box.center = mf.sharedMesh.bounds.center;
-        }
-        else
-        {
-            box.size = new Vector3(3f, 3f, 0.2f);
-        }
+        foreach (Collider c in beam.GetComponents<Collider>())
+            Object.Destroy(c);
     }
 
-    public static void EnsureBeamDamage(Transform laser, float dps, float hit)
+    public static void EnsureBeamHazard(Transform beam, float beamMargin, float dps, float hit)
     {
-        LaserDamage dmg = laser.GetComponent<LaserDamage>();
-        if (dmg == null)
-        {
-            dmg = laser.gameObject.AddComponent<LaserDamage>();
-            dmg.damagePerSecond = dps;
-            dmg.hitDamage = hit;
-        }
+        LaserBeamHazard hazard = beam.GetComponent<LaserBeamHazard>();
+        if (hazard == null)
+            hazard = beam.gameObject.AddComponent<LaserBeamHazard>();
+        hazard.beamMargin = beamMargin;
+        hazard.damagePerSecond = dps;
+        hazard.hitDamage = hit;
     }
 
     public static Material GetRuntimeRed()
