@@ -161,37 +161,6 @@ public static class StealthDebugMenu
         Debug.Log("Stealth Debug: crouch key released (C up).");
     }
 
-    [MenuItem(MenuRoot + "Teleport Player Into Scanner 1 Sweep")]
-    static void TeleportScanner1() => TeleportIntoScanner(1);
-
-    /// <summary>Drops the player in the middle of a scanner's sweep band.</summary>
-    static void TeleportIntoScanner(int index)
-    {
-        if (!RequirePlayMode()) return;
-
-        GameObject scannerGo = GameObject.Find("Scanner " + index);
-        if (scannerGo == null)
-        {
-            Debug.LogWarning($"Stealth Debug: 'Scanner {index}' not found in the scene.");
-            return;
-        }
-
-        PlayerHealth hp = Object.FindFirstObjectByType<PlayerHealth>();
-        if (hp == null)
-        {
-            Debug.LogWarning("Stealth Debug: no PlayerHealth in the scene.");
-            return;
-        }
-
-        Vector3 dest = new Vector3(0f, hp.transform.position.y, scannerGo.transform.position.z);
-        CharacterController cc = hp.GetComponent<CharacterController>();
-        if (cc != null) cc.enabled = false;
-        hp.transform.position = dest;
-        if (cc != null) cc.enabled = true;
-
-        Debug.Log($"Stealth Debug: player teleported into scanner {index} sweep (z {dest.z:0.0}).");
-    }
-
     [MenuItem(MenuRoot + "Measure Corridor (log)")]
     static void MeasureCorridor()
     {

@@ -8508,7 +8508,6 @@ Transform:
   - {fileID: 1966822913}
   - {fileID: 1660742000}
   - {fileID: 1326536720}
-  - {fileID: 1418520404}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1052229858
@@ -10816,71 +10815,6 @@ PhysicsMaterial:
   m_Bounciness: 0
   m_FrictionCombine: 0
   m_BounceCombine: 0
---- !u!1 &1418520403
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1418520404}
-  - component: {fileID: 1418520405}
-  m_Layer: 0
-  m_Name: Scanner 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1418520404
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418520403}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -53.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1049072839}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1418520405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418520403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ccbe253fe9a934488c977980bd660e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScannerHazard
-  sweepRange: 1.3
-  sweepSpeed: 2.6
-  endPause: 0.6
-  startDelay: 1
-  slabHalfWidth: 4.9
-  slabBottom: 1.35
-  slabTop: 2.6
-  slabHalfDepth: 0.8
-  visualHalfWidth: 4.75
-  timeToAlarm: 0.8
-  flashlightRateMultiplier: 2
-  meterDecayPerSecond: 0.6
-  checkInterval: 0.1
-  alarmDamage: 15
-  alarmDuration: 1.2
-  alarmCooldown: 3
-  meter: 0
-  alarmed: 0
-  seesPlayer: 0
-  currentDetectionRate: 0
-  sweepOffset: 0
 --- !u!43 &1421336616
 Mesh:
   m_ObjectHideFlags: 0
