@@ -52,7 +52,7 @@ public static class LaserSetup
             _runtimeRed.SetColor("_BaseColor", Color.red);
         if (_runtimeRed.HasProperty("_EmissionColor"))
         {
-            _runtimeRed.SetColor("_EmissionColor", Color.red * 2f);
+            _runtimeRed.SetColor("_EmissionColor", new Color(5f, 0.12f, 0.12f));
             _runtimeRed.EnableKeyword("_EMISSION");
         }
         return _runtimeRed;

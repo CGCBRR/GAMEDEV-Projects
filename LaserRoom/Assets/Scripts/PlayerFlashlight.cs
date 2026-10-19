@@ -39,7 +39,6 @@ public class PlayerFlashlight : MonoBehaviour
     StarterAssetsInputs _input;
     Light _light;
     Camera _camera;
-    bool _prevPressed;
     float _nextCheck;
 
     void Awake()
@@ -69,10 +68,14 @@ public class PlayerFlashlight : MonoBehaviour
         if (_light != null && _light.enabled != on)
             SetOn(on);
 
-        bool pressed = _input != null && _input.flashlight;
-        if (pressed && !_prevPressed)
+        // The Button action only delivers the press (the release never reaches
+        // value.isPressed), so like Jump in the Starter Assets controller the press is
+        // consumed here. That is what lets every F tap toggle the light.
+        if (_input != null && _input.flashlight)
+        {
+            _input.flashlight = false;
             SetOn(!on);
-        _prevPressed = pressed;
+        }
 
         if (!on) return;
         if (Time.time < _nextCheck) return;
