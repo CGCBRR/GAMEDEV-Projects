@@ -32,9 +32,9 @@ public class LaserController : MonoBehaviour
     [Tooltip("Beam cross-section is inflated by this factor to build the hazard capsule radius (1.25 = 25% bigger).")]
     public float beamMargin = 1.25f;
     [Tooltip("Damage applied while a laser touches the player (per second).")]
-    public float damagePerSecond = 30f;
+    public float damagePerSecond = 20f;
     [Tooltip("Instant damage on first touch.")]
-    public float hitDamage = 10f;
+    public float hitDamage = 20f;
 
     Vector3[] _startPos;
     float _waveStart;

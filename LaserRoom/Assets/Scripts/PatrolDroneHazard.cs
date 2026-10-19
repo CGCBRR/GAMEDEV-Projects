@@ -50,7 +50,7 @@ public class PatrolDroneHazard : MonoBehaviour
 
     [Header("Alarm")]
     [Tooltip("Damage dealt the moment the alarm triggers. A held shield absorbs it.")]
-    public float alarmDamage = 20f;
+    public float alarmDamage = 15f;
     [Tooltip("Seconds the drone stays alerted and chases.")]
     public float alertDuration = 5f;
     [Tooltip("Seconds after an alarm ends before this drone can raise another.")]
@@ -62,7 +62,7 @@ public class PatrolDroneHazard : MonoBehaviour
     [Tooltip("Distance the drone keeps from the player while chasing - it will not fly through you.")]
     public float chaseStandoff = 1.5f;
     [Tooltip("Damage per hit while alerted and touching the player.")]
-    public float contactDamage = 10f;
+    public float contactDamage = 7f;
     [Tooltip("Minimum seconds between contact hits.")]
     public float contactInterval = 0.9f;
     [Tooltip("Radius of the contact volume (CheckSphere) around the drone.")]

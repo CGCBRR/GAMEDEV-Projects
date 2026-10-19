@@ -17,7 +17,7 @@ public class GameTimer : MonoBehaviour
 
     [Header("Timer")]
     [Tooltip("Seconds on the clock when the Start Checkpoint is touched.")]
-    public float duration = 40f;
+    public float duration = 60f;
 
     [Header("HUD label")]
     public int timerFontSize = 40;

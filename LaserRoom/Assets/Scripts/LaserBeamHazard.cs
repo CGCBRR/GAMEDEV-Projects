@@ -13,9 +13,9 @@ public class LaserBeamHazard : MonoBehaviour
 {
     [Header("Damage")]
     [Tooltip("Instant damage the moment the beam starts touching the player.")]
-    public float hitDamage = 30f;
+    public float hitDamage = 20f;
     [Tooltip("Damage per second while the player stays inside the beam.")]
-    public float damagePerSecond = 30f;
+    public float damagePerSecond = 20f;
 
     [Header("Queries")]
     [Tooltip("Seconds between volume checks. Checks are staggered across beams.")]
